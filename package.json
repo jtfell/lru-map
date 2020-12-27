@@ -1,24 +1,14 @@
 {
-  "name": "lru-map",
-  "version": "1.6.1",
+  "name": "@jtfell/lru-map",
+  "version": "1.0.0",
   "description": "An ES6-y Map with LRU and max-age eviction",
-  "main": "index.js",
+  "main": "src/lru-map.js",
   "scripts": {
-    "coffeelint": "git ls-files | grep \"\\.coffee$\" | xargs node_modules/.bin/coffeelint -c",
-    "coffee-jshint": "git ls-files | grep \"\\.coffee$\" | xargs node_modules/.bin/coffee-jshint -o node,mocha,loopfunc",
-    "lint": "npm run coffeelint && npm run coffee-jshint",
-    "unittest": "node_modules/.bin/mocha --compilers coffee:coffee-script/register --recursive test",
-    "htmlcov": "node_modules/.bin/mocha --compilers coffee:coffee-script/register --reporter html-cov --require coverage/init.js --recursive test > coverage/coverage.html",
-    "showcov": "npm run htmlcov && xdg-open coverage/coverage.html",
-    "lcov": "node_modules/.bin/mocha --compilers coffee:coffee-script/register --reporter mocha-lcov-reporter --require coverage/init.js --recursive test > coverage/coverage.lcov",
-    "fix-lcov-paths": "sed 's,SF:,SF:src/,' coverage/coverage.lcov > coverage/coverage-fixed.lcov",
-    "coveralls": "npm run lcov && npm run fix-lcov-paths && node_modules/coveralls/bin/coveralls.js < coverage/coverage-fixed.lcov",
-    "localtest": "npm run unittest && npm run lint && npm run showcov",
-    "test": "npm run unittest && npm run lint && npm run coveralls"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bchociej/lru-map.git"
+    "url": "git+https://github.com/jtfell/lru-map.git"
   },
   "keywords": [
     "map",
@@ -28,25 +18,11 @@
     "evict",
     "collection"
   ],
-  "author": "Ben Chociej <ben@chociej.io>",
+  "author": ["Ben Chociej <ben@chociej.io>", "Julian Fell <hi@jtfell.com>"],
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/bchociej/lru-map/issues"
-  },
-  "homepage": "https://github.com/bchociej/lru-map#readme",
-  "dependencies": {
-    "coffee-script": "^1.9.3",
-    "es6-map": "^0.1.1",
-    "es6-symbol": "^2.0.1"
-  },
+  "homepage": "https://github.com/jtfell/lru-map#readme",
   "devDependencies": {
-    "coffee-19-jshint": "^2.3.1",
-    "coffee-coverage": "^0.6.3",
-    "coffeelint": "^1.10.1",
-    "coveralls": "^2.11.4",
-    "expect.js": "^0.3.1",
-    "mocha": "^2.2.5",
-    "mocha-lcov-reporter": "^1.0.0",
-    "bluebird": "^3.3.5"
+    "expect.js": "0.3.1",
+    "jest": "26.6.3"
   }
 }
