@@ -1,6 +1,6 @@
 {
   "name": "@jtfell/lru-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An ES6-y Map with LRU and max-age eviction",
   "main": "src/lru-map.js",
   "scripts": {
