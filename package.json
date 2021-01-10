@@ -18,7 +18,10 @@
     "evict",
     "collection"
   ],
-  "author": ["Ben Chociej <ben@chociej.io>", "Julian Fell <hi@jtfell.com>"],
+  "author": [
+    "Ben Chociej <ben@chociej.io>",
+    "Julian Fell <hi@jtfell.com>"
+  ],
   "license": "Apache-2.0",
   "homepage": "https://github.com/jtfell/lru-map#readme",
   "devDependencies": {

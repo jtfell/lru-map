@@ -363,8 +363,9 @@ class LRUMap {
     this._total = 0;
   }
 
-  // affects LRU eviction; affects staleness if accessUpdatesTimestamp
+  // affects LRU eviction; affects staleness if accessUpdatesTimestamp; reaps stales
   get(key) {
+    this.reapStale();
     const entry = this._map.get(key);
 
     if (entry == null) {

@@ -461,33 +461,6 @@ describe("LRUMap", function () {
 
       expect(called).to.be(true);
     });
-
-    it("respects accessUpdatesTimestamp", function () {
-      const lmap = new LRUMap({ maxAge: 3, accessUpdatesTimestamp: true });
-
-      const staleDate = +new Date() - 4000;
-
-      const entry = {
-        size: 1,
-        value: "hi",
-        timestamp: staleDate,
-      };
-
-      lmap.testMap.set("one", entry);
-      lmap.testSetTotal(1);
-
-      lmap.get("one");
-      expect(entry.timestamp).to.be.greaterThan(+new Date() - 50);
-      lmap.reapStale();
-      expect(lmap.currentSize()).to.be(1);
-
-      lmap.accessUpdatesTimestamp(false);
-      entry.timestamp = staleDate;
-      lmap.get("one");
-      expect(entry.timestamp).to.be(staleDate);
-      lmap.reapStale();
-      expect(lmap.currentSize()).to.be(0);
-    });
   });
 
   describe("#set()", function () {
